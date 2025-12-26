@@ -35,7 +35,7 @@ Sustituimos la estadística frecuentista clásica por un modelo **Beta-Bernoulli
 
 ---
 
-## 🛠️ Arquitectura Técnica (OOP)
+## Arquitectura Técnica (OOP)
 El sistema está diseñado bajo principios de ingeniería de software, desacoplando la lógica de la presentación (Separation of Concerns):
 
 *   **`engine.py` (Domain Layer)**: Contiene la clase `NudgeEngine`. Encapsula la lógica matemática, la generación de distribuciones y el muestreo estadístico. Es agnóstico a la interfaz.

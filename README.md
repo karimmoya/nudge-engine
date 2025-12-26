@@ -1,4 +1,4 @@
-## 🧠 Nudge Engine: Stochastic Behavioral Simulation & Bayesian Analysis
+## Nudge Engine: Stochastic Behavioral Simulation & Bayesian Analysis
 
 ### *Predicting User Decision-Making through Prospect Theory and Monte Carlo Simulations*
 
@@ -8,7 +8,7 @@ Este proyecto es una herramienta de **Investigación Cuantitativa de UX** diseñ
 
 ---
 
-## 📋 El Problema: El coste de la incertidumbre en UX
+## El Problema: El coste de la incertidumbre en UX
 Los tests A/B tradicionales son el estándar de oro, pero son costosos y lentos. Requieren semanas de tráfico real para alcanzar significancia estadística y conllevan el riesgo de exponer a usuarios reales a experiencias subóptimas. 
 
 El **Nudge Engine** actúa como una capa de **validación pre-experimental**, permitiendo a los investigadores:
@@ -18,7 +18,7 @@ El **Nudge Engine** actúa como una capa de **validación pre-experimental**, pe
 
 ---
 
-## 🧪 Fundamentos Científicos
+## Fundamentos Científicos
 
 ### 1. Modelado de Agentes (Prospect Theory)
 Cada uno de los 10,000 agentes generados posee rasgos individuales basados en la economía conductual de **Daniel Kahneman**:
@@ -43,7 +43,7 @@ El sistema está diseñado bajo principios de ingeniería de software, desacopla
 
 ---
 
-## 🚀 Instalación y Uso
+## Instalación y Uso
 
 1. **Clonar el repositorio:**
    ```bash
@@ -64,7 +64,7 @@ Lanzar el Dashboard:
 
       
 
-## 📊 Visualización de Resultados
+## Visualización de Resultados
 
 El dashboard interactivo permite ajustar en tiempo real:
 
@@ -73,7 +73,7 @@ El dashboard interactivo permite ajustar en tiempo real:
     Potencia del Nudge: Intensidad del mensaje de aversión a la pérdida.
 
 ![img.png](assets/dashboard.png)![img_1.png](assets/graphs_detail.png)
-## ⚠️ Limitaciones del Modelo y Validez Externa
+## Limitaciones del Modelo y Validez Externa
 
 Aunque el Nudge Engine es una herramienta potente de estimación, debe utilizarse como complemento, no sustituto, de los tests con usuarios reales.
 

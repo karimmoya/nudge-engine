@@ -1,90 +1,95 @@
-## Nudge Engine: Stochastic Behavioral Simulation & Bayesian Analysis
+    
+# Nudge Engine: Stochastic Behavioral Simulation & Bayesian Analysis
 
-### *Predicting User Decision-Making through Prospect Theory and Monte Carlo Simulations*
+### Predicting User Decision-Making through Prospect Theory and Monte Carlo Simulations
 
-Este proyecto es una herramienta de **Investigación Cuantitativa de UX** diseñada para simular cómo los sesgos cognitivos —específicamente la **Aversión a la Pérdida**— impactan las tasas de conversión en un funnel digital. En lugar de depender exclusivamente de tests A/B reactivos, el **Nudge Engine** permite modelar poblaciones sintéticas y predecir resultados mediante inferencia estadística avanzada.
+This project is a Quantitative UX Research tool designed to simulate how cognitive biases—specifically Loss Aversion—impact conversion rates in digital funnels. Instead of relying solely on reactive A/B testing, the Nudge Engine models synthetic populations to predict outcomes using advanced statistical inference.
 
 ![Dashboard Preview](https://img.shields.io/badge/UX_Research-Quantitative-blue) ![Python](https://img.shields.io/badge/Python-3.10+-green) ![Stats](https://img.shields.io/badge/Stats-Bayesian_Inference-orange)
 
 ---
 
-## El Problema: El coste de la incertidumbre en UX
-Los tests A/B tradicionales son el estándar de oro, pero son costosos y lentos. Requieren semanas de tráfico real para alcanzar significancia estadística y conllevan el riesgo de exponer a usuarios reales a experiencias subóptimas. 
+## The Problem: The Cost of Uncertainty in UX
+Traditional A/B testing is the gold standard, but it is expensive and slow. It requires weeks of live traffic to reach statistical significance and involves the risk of exposing real users to sub-optimal experiences.
 
-El **Nudge Engine** actúa como una capa de **validación pre-experimental**, permitiendo a los investigadores:
-1.  **Priorizar Hipótesis:** Filtrar ideas de bajo impacto antes de gastar recursos de ingeniería.
-2.  **Cuantificar el riesgo:** Simular escenarios de alta fricción para prever caídas en la conversión.
-3.  **Aplicar rigor Bayesiano:** Obtener probabilidades de éxito accionables, superando las limitaciones de los p-values binarios.
-
----
-
-## Fundamentos Científicos
-
-### 1. Modelado de Agentes (Prospect Theory)
-Cada uno de los 10,000 agentes generados posee rasgos individuales basados en la economía conductual de **Daniel Kahneman**:
-*   **Coeficiente de Aversión a la Pérdida ($\lambda$):** Modelado con una distribución **Log-Normal** ($\mu=0.7, \sigma=0.2$) para reflejar que el dolor de perder es, de media, el doble que la alegría de ganar ($\lambda \approx 2.0$), pero manteniendo la varianza poblacional.
-*   **Presupuesto Cognitivo:** Modelado con una **Distribución Beta**, representando la resistencia finita del usuario a la fricción y la fatiga de decisión.
-
-### 2. Simulación Monte Carlo
-En lugar de usar fórmulas deterministas, el motor utiliza **fuerza bruta estocástica**. Para cada agente, se realiza un "lanzamiento de moneda" (distribución Binomial) basado en su probabilidad individual de conversión. La agregación de estos miles de micro-experimentos genera una tasa de conversión macroscópica realista.
-
-### 3. Inferencia Bayesiana
-Sustituimos la estadística frecuentista clásica por un modelo **Beta-Bernoulli**. 
-*   Comparamos las distribuciones "Posteriores" de las variantes A y B.
-*   Calculamos la **Probabilidad de Superioridad**: el porcentaje de veces que la Variante B supera a la A en 4,000 universos simulados, proporcionando una métrica directa de decisión de negocio.
+The Nudge Engine acts as a pre-validation layer, allowing researchers to:
+1.  Prioritize Hypotheses: Filter low-impact ideas before committing engineering resources.
+2.  Quantify Risk: Simulate high-friction scenarios to predict conversion drops.
+3.  Apply Bayesian Rigor: Obtain actionable probabilities of success, overcoming the limitations of binary p-values.
 
 ---
 
-## Arquitectura Técnica (OOP)
-El sistema está diseñado bajo principios de ingeniería de software, desacoplando la lógica de la presentación (Separation of Concerns):
+## Scientific Foundations
 
-*   **`engine.py` (Domain Layer)**: Contiene la clase `NudgeEngine`. Encapsula la lógica matemática, la generación de distribuciones y el muestreo estadístico. Es agnóstico a la interfaz.
-*   **`app.py` (Presentation Layer)**: Interfaz reactiva construida con Streamlit. Se encarga de la captura de inputs, la visualización de datos con Plotly y la experiencia de usuario.
+### 1. Agent Modeling (Prospect Theory)
+Each of the 10,000 generated agents possesses individual traits based on Daniel Kahneman’s behavioral economics:
+*   **Loss Aversion Coefficient (Lambda):** Modeled with a Log-Normal distribution (mu=0.7, sigma=0.2) to reflect that the pain of losing is, on average, twice as powerful as the pleasure of gaining (Lambda approx 2.0), while maintaining population variance.
+*   **Cognitive Budget:** Modeled with a Beta Distribution, representing the user's finite resistance to friction and decision fatigue.
+
+### 2. Monte Carlo Simulation
+Instead of using deterministic formulas, the engine employs stochastic brute force. For every agent, a "coin flip" (Binomial distribution) is performed based on their individual conversion probability. Aggregating these thousands of micro-experiments generates a realistic macroscopic conversion rate.
+
+### 3. Bayesian Inference
+We replace classical frequentist statistics with a Beta-Bernoulli model.
+*   We compare the "Posterior" distributions of variants A and B.
+*   We calculate the Probability of Superiority: the percentage of times Variant B beats Variant A across 4,000 simulated universes, providing a direct business decision metric.
 
 ---
 
-## Instalación y Uso
+## Technical Architecture (OOP)
+The system follows high-level software engineering principles, decoupling logic from presentation (Separation of Concerns):
 
-1. **Clonar el repositorio:**
+*   **engine.py (Domain Layer)**: Contains the `NudgeEngine` class. It encapsulates mathematical logic, distribution generation, and statistical sampling. It is UI-agnostic.
+*   **app.py (Presentation Layer)**: Reactive interface built with Streamlit. It handles input capture, data visualization with Plotly, and user experience.
+
+---
+
+## Installation & Usage
+
+1. Clone the repository:
    ```bash
-   git clone https://github.com/tu-usuario/nudge-engine.git
+   git clone https://github.com/your-username/nudge-engine.git
    cd nudge-engine
 
   
 
-    Instalar dependencias:
-    pip install -r requirements.txt
+   Install dependencies: 
+   
+   pip install -r requirements.txt
 
   
 
-Lanzar el Dashboard:
+2. Launch the Dashboard:
+
 
         
     streamlit run app.py
 
       
 
-## Visualización de Resultados
+## Results Visualization
 
-El dashboard interactivo permite ajustar en tiempo real:
+The interactive dashboard allows for real-time adjustment of Funnel Friction and Nudge Power.
+Dashboard Overview
 
-    Fricción del Funnel: Dificultad percibida del proceso.
+![alt text](assets/dashboard.png)
 
-    Potencia del Nudge: Intensidad del mensaje de aversión a la pérdida.
+Detail: Bayesian Uncertainty Analysis
 
-![img.png](assets/dashboard.png)![img_1.png](assets/graphs_detail.png)
-## Limitaciones del Modelo y Validez Externa
+![alt text](assets/graphs_detail.png)
 
-Aunque el Nudge Engine es una herramienta potente de estimación, debe utilizarse como complemento, no sustituto, de los tests con usuarios reales.
+## Model Limitations & External Validity
 
-    Reduccionismo de Variables: El modelo asume que la decisión de compra depende principalmente de la aversión a la pérdida y la carga cognitiva. En un entorno real, factores exógenos (confianza en la marca, precio, prueba social, estética) juegan un papel crucial no modelado aquí.
+While the Nudge Engine is a powerful estimation tool, it should be used as a complement to, not a substitute for, real-user testing.
 
-    Calibración de Parámetros ("Garbage In, Garbage Out"): Los parámetros base (λ≈2.0λ≈2.0) provienen de la literatura académica general. Para una precisión máxima, el modelo debería calibrarse con datos históricos del producto específico.
+    Variable Reductionism: The model assumes the purchase decision depends primarily on loss aversion and cognitive load. In a real environment, exogenous factors (brand trust, price, social proof, aesthetics) play crucial roles not modeled here.
 
-    Independencia de Agentes: La simulación asume que los usuarios no interactúan entre sí. No captura efectos de red, viralidad o influencia social que podrían alterar la percepción de valor.
+    Parameter Calibration ("Garbage In, Garbage Out"): Base parameters (Lambda approx 2.0) are derived from general academic literature. For maximum accuracy, the model should be calibrated with historical data from the specific product.
 
-Conclusión: Esta herramienta sirve para descartar hipótesis débiles y optimizar la estrategia de experimentación, ahorrando tiempo y presupuesto al testear solo las variantes con mayor probabilidad teórica de éxito.
+    Agent Independence: The simulation assumes users do not interact with each other. It does not capture network effects, virality, or social influence that could alter value perception.
 
-Quantitative UX Researcher | Software Developer.
+**Conclusion**: This tool serves to discard weak hypotheses and optimize experimentation strategy, saving time and budget by testing only variants with higher theoretical probability of success.
 
-Desarrollado por Karim Moya. 
+**Developed by Karim Moya**
+
+Quantitative UX Researcher | Software Developer
